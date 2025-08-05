@@ -1,0 +1,1372 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ملف إنجاز الأستاذ عبدالرحمن سليمان الحجيلي</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap');
+        
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 50%, #86efac 100%);
+            min-height: 100vh;
+        }
+        
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+        
+        .slide-in {
+            animation: slideIn 0.8s ease-out forwards;
+            opacity: 0;
+            transform: translateX(50px);
+        }
+        
+        @keyframes slideIn {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .fade-in {
+            animation: fadeIn 1s ease-out forwards;
+            opacity: 0;
+        }
+        
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+        
+        .section-content {
+            display: none;
+            animation: slideDown 0.5s ease-out;
+        }
+        
+        .section-content.active {
+            display: block;
+        }
+        
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .nav-item {
+            transition: all 0.3s ease;
+            border-radius: 15px;
+            padding: 15px 25px;
+            margin: 5px 0;
+        }
+        
+        .nav-item:hover {
+            background: rgba(34, 197, 94, 0.2);
+            transform: translateX(-5px);
+        }
+        
+        .nav-item.active {
+            background: linear-gradient(135deg, #22c55e, #16a34a);
+            color: white;
+            box-shadow: 0 8px 25px rgba(34, 197, 94, 0.3);
+        }
+        
+        .ministry-logo {
+            width: 120px;
+            height: 120px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            border: 3px solid #22c55e;
+        }
+        
+        .achievement-badge {
+            background: linear-gradient(135deg, #fbbf24, #f59e0b);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: bold;
+            display: inline-block;
+            margin: 5px;
+            box-shadow: 0 4px 15px rgba(251, 191, 36, 0.3);
+        }
+        
+        .student-card {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 10px 0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border-right: 5px solid #22c55e;
+            transition: all 0.3s ease;
+        }
+        
+        .student-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .progress-bar {
+            background: #e5e7eb;
+            border-radius: 10px;
+            height: 20px;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            background: linear-gradient(90deg, #22c55e, #16a34a);
+            height: 100%;
+            border-radius: 10px;
+            transition: width 1s ease-in-out;
+        }
+        
+        .contact-form {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        .input-field {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #d1fae5;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            background: white;
+        }
+        
+        .input-field:focus {
+            outline: none;
+            border-color: #22c55e;
+            box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.1);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #22c55e, #16a34a);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 16px;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(34, 197, 94, 0.3);
+        }
+        
+        .stats-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            border-top: 4px solid #22c55e;
+        }
+        
+        .stats-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #22c55e;
+            margin-bottom: 10px;
+        }
+        
+        .worksheet-item {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 15px 0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            border-right: 4px solid #22c55e;
+            transition: all 0.3s ease;
+        }
+        
+        .worksheet-item:hover {
+            transform: translateX(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+        }
+    </style>
+</head>
+<body>
+    <div class="min-h-screen">
+        <!-- الترويسة -->
+        <header class="bg-white shadow-lg">
+            <div class="container mx-auto px-6 py-4">
+                <div class="flex justify-between items-center">
+                    <!-- شعار وزارة التعليم -->
+                    <div class="ministry-logo floating">
+                        <svg viewBox="0 0 100 100" class="w-16 h-16 text-green-600">
+                            <circle cx="50" cy="50" r="45" fill="none" stroke="currentColor" stroke-width="3"/>
+                            <path d="M30 40 L50 25 L70 40 L70 75 L30 75 Z" fill="currentColor" opacity="0.8"/>
+                            <rect x="45" y="35" width="10" height="25" fill="white"/>
+                            <rect x="35" y="45" width="30" height="3" fill="white"/>
+                            <rect x="35" y="55" width="30" height="3" fill="white"/>
+                            <text x="50" y="90" text-anchor="middle" font-size="8" fill="currentColor">وزارة التعليم</text>
+                        </svg>
+                    </div>
+                    
+                    <!-- معلومات المعلم -->
+                    <div class="text-center flex-1">
+                        <h1 class="text-4xl font-bold text-green-700 mb-2">ملف إنجاز</h1>
+                        <h2 class="text-3xl font-semibold text-gray-700 mb-1">الأستاذ عبدالرحمن سليمان الحجيلي</h2>
+                        <p class="text-xl text-green-600 font-medium">مدرسة الزبير بن العوام</p>
+                        <p class="text-lg text-gray-600">العام الدراسي 1446هـ</p>
+                    </div>
+                    
+                    <!-- التاريخ والأزرار الإدارية -->
+                    <div class="text-left">
+                        <div class="bg-green-100 rounded-lg p-4 mb-4">
+                            <p class="text-green-700 font-bold" id="currentDate"></p>
+                            <p class="text-green-600" id="currentTime"></p>
+                        </div>
+                        
+                        <!-- أزرار التحكم الإداري -->
+                        <div class="space-y-2">
+                            <button onclick="toggleAdminMode()" id="adminToggle" class="w-full bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-semibold transition-all duration-300">
+                                🔐 تسجيل دخول إداري
+                            </button>
+                            <div id="adminControls" class="hidden space-y-2">
+                                <button onclick="showAddContentModal()" class="w-full bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg font-semibold">
+                                    ➕ إضافة محتوى
+                                </button>
+                                <button onclick="showEditMode()" class="w-full bg-yellow-600 hover:bg-yellow-700 text-white px-4 py-2 rounded-lg font-semibold">
+                                    ✏️ تعديل المحتوى
+                                </button>
+                                <button onclick="exportData()" class="w-full bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg font-semibold">
+                                    📤 تصدير البيانات
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="container mx-auto px-6 py-8">
+            <div class="grid lg:grid-cols-4 gap-8">
+                <!-- القائمة الجانبية -->
+                <div class="lg:col-span-1">
+                    <div class="bg-white rounded-2xl shadow-lg p-6 sticky top-8">
+                        <h3 class="text-2xl font-bold text-green-700 mb-6 text-center">محتويات الملف</h3>
+                        <nav class="space-y-2">
+                            <div class="nav-item active" onclick="showSection('profile')">
+                                <div class="flex items-center">
+                                    <span class="text-2xl ml-3">👤</span>
+                                    <span class="font-semibold">السيرة الذاتية</span>
+                                </div>
+                            </div>
+                            <div class="nav-item" onclick="showSection('vision')">
+                                <div class="flex items-center">
+                                    <span class="text-2xl ml-3">🎯</span>
+                                    <span class="font-semibold">الرؤية والأهداف</span>
+                                </div>
+                            </div>
+                            <div class="nav-item" onclick="showSection('worksheets')">
+                                <div class="flex items-center">
+                                    <span class="text-2xl ml-3">📝</span>
+                                    <span class="font-semibold">أوراق العمل</span>
+                                </div>
+                            </div>
+                            <div class="nav-item" onclick="showSection('students')">
+                                <div class="flex items-center">
+                                    <span class="text-2xl ml-3">👥</span>
+                                    <span class="font-semibold">أعمال الطلاب</span>
+                                </div>
+                            </div>
+                            <div class="nav-item" onclick="showSection('monitoring')">
+                                <div class="flex items-center">
+                                    <span class="text-2xl ml-3">📊</span>
+                                    <span class="font-semibold">كشوف المتابعة</span>
+                                </div>
+                            </div>
+                            <div class="nav-item" onclick="showSection('contact')">
+                                <div class="flex items-center">
+                                    <span class="text-2xl ml-3">📞</span>
+                                    <span class="font-semibold">تواصل معنا</span>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+
+                <!-- المحتوى الرئيسي -->
+                <div class="lg:col-span-3">
+                    <!-- السيرة الذاتية -->
+                    <div id="profile" class="section-content active">
+                        <div class="bg-white rounded-2xl shadow-lg p-8 mb-8">
+                            <h2 class="text-3xl font-bold text-green-700 mb-6 flex items-center">
+                                <span class="text-4xl ml-4">👤</span>
+                                السيرة الذاتية
+                            </h2>
+                            
+                            <div class="grid md:grid-cols-2 gap-8">
+                                <div>
+                                    <h3 class="text-2xl font-semibold text-green-600 mb-4">المعلومات الشخصية</h3>
+                                    <div class="space-y-4">
+                                        <div class="flex items-center p-3 bg-green-50 rounded-lg">
+                                            <span class="text-xl ml-3">📛</span>
+                                            <div>
+                                                <p class="font-semibold text-gray-700">الاسم الكامل</p>
+                                                <p class="text-green-600">عبدالرحمن سليمان الحجيلي</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-center p-3 bg-green-50 rounded-lg">
+                                            <span class="text-xl ml-3">🏫</span>
+                                            <div>
+                                                <p class="font-semibold text-gray-700">المدرسة</p>
+                                                <p class="text-green-600">الزبير بن العوام</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-center p-3 bg-green-50 rounded-lg">
+                                            <span class="text-xl ml-3">📚</span>
+                                            <div>
+                                                <p class="font-semibold text-gray-700">التخصص</p>
+                                                <p class="text-green-600">معلم الصف الأول الابتدائي</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-center p-3 bg-green-50 rounded-lg">
+                                            <span class="text-xl ml-3">⏰</span>
+                                            <div>
+                                                <p class="font-semibold text-gray-700">سنوات الخبرة</p>
+                                                <p class="text-green-600">8 سنوات</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <h3 class="text-2xl font-semibold text-green-600 mb-4">المؤهلات والإنجازات</h3>
+                                    <div class="space-y-3">
+                                        <div class="achievement-badge">🎓 بكالوريوس تربية ابتدائية</div>
+                                        <div class="achievement-badge">📜 دبلوم صعوبات التعلم</div>
+                                        <div class="achievement-badge">🏆 معلم متميز 2023</div>
+                                        <div class="achievement-badge">💻 شهادة التعليم الرقمي</div>
+                                        <div class="achievement-badge">🎯 دورة إدارة الصف</div>
+                                        <div class="achievement-badge">📊 دورة التقويم التربوي</div>
+                                    </div>
+                                    
+                                    <div class="mt-6 p-4 bg-gradient-to-r from-green-100 to-green-50 rounded-lg">
+                                        <h4 class="font-bold text-green-700 mb-2">الفلسفة التعليمية</h4>
+                                        <p class="text-gray-700 leading-relaxed">
+                                            أؤمن بأن كل طفل قادر على التعلم والإبداع، وأسعى لتوفير بيئة تعليمية محفزة ومشجعة تنمي قدرات الطلاب وتبني شخصياتهم بطريقة متوازنة وشاملة.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- الرؤية والأهداف -->
+                    <div id="vision" class="section-content">
+                        <div class="bg-white rounded-2xl shadow-lg p-8 mb-8">
+                            <h2 class="text-3xl font-bold text-green-700 mb-6 flex items-center">
+                                <span class="text-4xl ml-4">🎯</span>
+                                الرؤية والأهداف
+                            </h2>
+                            
+                            <div class="grid md:grid-cols-2 gap-8">
+                                <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-xl p-6">
+                                    <h3 class="text-2xl font-bold text-green-700 mb-4 flex items-center">
+                                        <span class="text-3xl ml-3">👁️</span>
+                                        الرؤية
+                                    </h3>
+                                    <p class="text-gray-700 text-lg leading-relaxed">
+                                        أن أكون معلماً مؤثراً يساهم في بناء جيل واعٍ ومبدع، قادر على مواجهة تحديات المستقبل بثقة وعلم، من خلال تطبيق أحدث الأساليب التعليمية والتربوية.
+                                    </p>
+                                </div>
+                                
+                                <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-6">
+                                    <h3 class="text-2xl font-bold text-blue-700 mb-4 flex items-center">
+                                        <span class="text-3xl ml-3">🎯</span>
+                                        الرسالة
+                                    </h3>
+                                    <p class="text-gray-700 text-lg leading-relaxed">
+                                        تقديم تعليم نوعي متميز يركز على تنمية شخصية الطالب المتكاملة، وإكسابه المهارات الأساسية والقيم النبيلة التي تؤهله ليكون عضواً فاعلاً في مجتمعه.
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-8">
+                                <h3 class="text-2xl font-bold text-green-700 mb-6 flex items-center">
+                                    <span class="text-3xl ml-3">🎯</span>
+                                    الأهداف التعليمية
+                                </h3>
+                                
+                                <div class="grid md:grid-cols-2 gap-6">
+                                    <div class="space-y-4">
+                                        <h4 class="text-xl font-semibold text-green-600">الأهداف قصيرة المدى</h4>
+                                        <div class="space-y-3">
+                                            <div class="flex items-start p-3 bg-green-50 rounded-lg">
+                                                <span class="text-green-600 ml-3 mt-1">✓</span>
+                                                <p class="text-gray-700">تحسين مستوى القراءة لدى 95% من الطلاب</p>
+                                            </div>
+                                            <div class="flex items-start p-3 bg-green-50 rounded-lg">
+                                                <span class="text-green-600 ml-3 mt-1">✓</span>
+                                                <p class="text-gray-700">تطوير مهارات الكتابة الأساسية</p>
+                                            </div>
+                                            <div class="flex items-start p-3 bg-green-50 rounded-lg">
+                                                <span class="text-green-600 ml-3 mt-1">✓</span>
+                                                <p class="text-gray-700">زيادة مشاركة الطلاب في الأنشطة</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="space-y-4">
+                                        <h4 class="text-xl font-semibold text-blue-600">الأهداف طويلة المدى</h4>
+                                        <div class="space-y-3">
+                                            <div class="flex items-start p-3 bg-blue-50 rounded-lg">
+                                                <span class="text-blue-600 ml-3 mt-1">🎯</span>
+                                                <p class="text-gray-700">بناء شخصية الطالب المتوازنة</p>
+                                            </div>
+                                            <div class="flex items-start p-3 bg-blue-50 rounded-lg">
+                                                <span class="text-blue-600 ml-3 mt-1">🎯</span>
+                                                <p class="text-gray-700">تنمية مهارات التفكير النقدي</p>
+                                            </div>
+                                            <div class="flex items-start p-3 bg-blue-50 rounded-lg">
+                                                <span class="text-blue-600 ml-3 mt-1">🎯</span>
+                                                <p class="text-gray-700">إعداد الطلاب للمراحل التالية</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- أوراق العمل -->
+                    <div id="worksheets" class="section-content">
+                        <div class="bg-white rounded-2xl shadow-lg p-8 mb-8">
+                            <h2 class="text-3xl font-bold text-green-700 mb-6 flex items-center">
+                                <span class="text-4xl ml-4">📝</span>
+                                أوراق العمل
+                            </h2>
+                            
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div class="worksheet-item" data-id="worksheet-1">
+                                    <div class="flex items-center justify-between mb-3">
+                                        <h3 class="text-xl font-bold text-green-700">الحروف الهجائية</h3>
+                                        <div class="flex items-center space-x-2 space-x-reverse">
+                                            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-semibold">جديد</span>
+                                            <div class="admin-controls hidden">
+                                                <button onclick="editItem('worksheet', 'worksheet-1')" class="text-blue-600 hover:text-blue-800 p-1">✏️</button>
+                                                <button onclick="deleteItem('worksheet-1')" class="text-red-600 hover:text-red-800 p-1">🗑️</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p class="text-gray-600 mb-4">أوراق عمل تفاعلية لتعليم الحروف العربية مع الأمثلة والصور</p>
+                                    <div class="flex items-center justify-between">
+                                        <span class="text-sm text-gray-500">📅 15 نوفمبر 2024</span>
+                                        <button class="btn-primary text-sm px-4 py-2">تحميل</button>
+                                    </div>
+                                </div>
+                                
+                                <div class="worksheet-item">
+                                    <div class="flex items-center justify-between mb-3">
+                                        <h3 class="text-xl font-bold text-green-700">الأرقام والعد</h3>
+                                        <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm font-semibold">محدث</span>
+                                    </div>
+                                    <p class="text-gray-600 mb-4">تمارين متنوعة لتعليم الأرقام من 1 إلى 20 مع أنشطة العد</p>
+                                    <div class="flex items-center justify-between">
+                                        <span class="text-sm text-gray-500">📅 12 نوفمبر 2024</span>
+                                        <button class="btn-primary text-sm px-4 py-2">تحميل</button>
+                                    </div>
+                                </div>
+                                
+                                <div class="worksheet-item">
+                                    <div class="flex items-center justify-between mb-3">
+                                        <h3 class="text-xl font-bold text-green-700">الألوان والأشكال</h3>
+                                        <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm font-semibold">شائع</span>
+                                    </div>
+                                    <p class="text-gray-600 mb-4">أنشطة ممتعة لتعليم الألوان الأساسية والأشكال الهندسية</p>
+                                    <div class="flex items-center justify-between">
+                                        <span class="text-sm text-gray-500">📅 10 نوفمبر 2024</span>
+                                        <button class="btn-primary text-sm px-4 py-2">تحميل</button>
+                                    </div>
+                                </div>
+                                
+                                <div class="worksheet-item">
+                                    <div class="flex items-center justify-between mb-3">
+                                        <h3 class="text-xl font-bold text-green-700">القراءة المبكرة</h3>
+                                        <span class="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-sm font-semibold">متقدم</span>
+                                    </div>
+                                    <p class="text-gray-600 mb-4">قصص قصيرة وتمارين فهم للطلاب المتقدمين في القراءة</p>
+                                    <div class="flex items-center justify-between">
+                                        <span class="text-sm text-gray-500">📅 8 نوفمبر 2024</span>
+                                        <button class="btn-primary text-sm px-4 py-2">تحميل</button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-8 text-center">
+                                <button class="btn-primary">
+                                    <span class="ml-2">📁</span>
+                                    عرض جميع أوراق العمل
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- أعمال الطلاب -->
+                    <div id="students" class="section-content">
+                        <div class="bg-white rounded-2xl shadow-lg p-8 mb-8">
+                            <h2 class="text-3xl font-bold text-green-700 mb-6 flex items-center">
+                                <span class="text-4xl ml-4">👥</span>
+                                أعمال الطلاب
+                            </h2>
+                            
+                            <div class="grid md:grid-cols-3 gap-6 mb-8">
+                                <div class="stats-card">
+                                    <div class="stats-number">28</div>
+                                    <p class="text-gray-600 font-semibold">إجمالي الطلاب</p>
+                                </div>
+                                <div class="stats-card">
+                                    <div class="stats-number">156</div>
+                                    <p class="text-gray-600 font-semibold">الأعمال المنجزة</p>
+                                </div>
+                                <div class="stats-card">
+                                    <div class="stats-number">92%</div>
+                                    <p class="text-gray-600 font-semibold">معدل الإنجاز</p>
+                                </div>
+                            </div>
+                            
+                            <div class="space-y-4">
+                                <div class="student-card" data-id="student-1">
+                                    <div class="flex items-center justify-between mb-4">
+                                        <div class="flex items-center">
+                                            <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center ml-4">
+                                                <span class="text-green-600 font-bold text-lg">أ</span>
+                                            </div>
+                                            <div>
+                                                <h3 class="font-bold text-gray-800">أحمد محمد العلي</h3>
+                                                <p class="text-gray-600 text-sm">الصف الأول أ</p>
+                                            </div>
+                                        </div>
+                                        <div class="text-left flex items-center space-x-2 space-x-reverse">
+                                            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-semibold">متفوق</span>
+                                            <div class="admin-controls hidden">
+                                                <button onclick="editItem('student', 'student-1')" class="text-blue-600 hover:text-blue-800 p-1">✏️</button>
+                                                <button onclick="deleteItem('student-1')" class="text-red-600 hover:text-red-800 p-1">🗑️</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="grid grid-cols-2 gap-4">
+                                        <div>
+                                            <p class="text-sm text-gray-600 mb-1">تقدم القراءة</p>
+                                            <div class="progress-bar">
+                                                <div class="progress-fill" style="width: 95%"></div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <p class="text-sm text-gray-600 mb-1">تقدم الكتابة</p>
+                                            <div class="progress-bar">
+                                                <div class="progress-fill" style="width: 88%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="student-card">
+                                    <div class="flex items-center justify-between mb-4">
+                                        <div class="flex items-center">
+                                            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center ml-4">
+                                                <span class="text-blue-600 font-bold text-lg">ف</span>
+                                            </div>
+                                            <div>
+                                                <h3 class="font-bold text-gray-800">فاطمة سالم الزهراني</h3>
+                                                <p class="text-gray-600 text-sm">الصف الأول أ</p>
+                                            </div>
+                                        </div>
+                                        <div class="text-left">
+                                            <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm font-semibold">جيد جداً</span>
+                                        </div>
+                                    </div>
+                                    <div class="grid grid-cols-2 gap-4">
+                                        <div>
+                                            <p class="text-sm text-gray-600 mb-1">تقدم القراءة</p>
+                                            <div class="progress-bar">
+                                                <div class="progress-fill" style="width: 82%"></div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <p class="text-sm text-gray-600 mb-1">تقدم الكتابة</p>
+                                            <div class="progress-bar">
+                                                <div class="progress-fill" style="width: 79%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="student-card">
+                                    <div class="flex items-center justify-between mb-4">
+                                        <div class="flex items-center">
+                                            <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center ml-4">
+                                                <span class="text-purple-600 font-bold text-lg">م</span>
+                                            </div>
+                                            <div>
+                                                <h3 class="font-bold text-gray-800">محمد عبدالله القحطاني</h3>
+                                                <p class="text-gray-600 text-sm">الصف الأول أ</p>
+                                            </div>
+                                        </div>
+                                        <div class="text-left">
+                                            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm font-semibold">يحتاج دعم</span>
+                                        </div>
+                                    </div>
+                                    <div class="grid grid-cols-2 gap-4">
+                                        <div>
+                                            <p class="text-sm text-gray-600 mb-1">تقدم القراءة</p>
+                                            <div class="progress-bar">
+                                                <div class="progress-fill" style="width: 65%"></div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <p class="text-sm text-gray-600 mb-1">تقدم الكتابة</p>
+                                            <div class="progress-bar">
+                                                <div class="progress-fill" style="width: 58%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-8 text-center">
+                                <button class="btn-primary">
+                                    <span class="ml-2">👥</span>
+                                    عرض جميع الطلاب
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- كشوف المتابعة -->
+                    <div id="monitoring" class="section-content">
+                        <div class="bg-white rounded-2xl shadow-lg p-8 mb-8">
+                            <h2 class="text-3xl font-bold text-green-700 mb-6 flex items-center">
+                                <span class="text-4xl ml-4">📊</span>
+                                كشوف المتابعة
+                            </h2>
+                            
+                            <div class="grid md:grid-cols-2 gap-8">
+                                <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-xl p-6">
+                                    <h3 class="text-xl font-bold text-green-700 mb-4">📈 تقرير الأداء الشهري</h3>
+                                    <div class="space-y-3">
+                                        <div class="flex justify-between items-center">
+                                            <span class="text-gray-700">الحضور والغياب</span>
+                                            <span class="font-bold text-green-600">96%</span>
+                                        </div>
+                                        <div class="flex justify-between items-center">
+                                            <span class="text-gray-700">إنجاز الواجبات</span>
+                                            <span class="font-bold text-green-600">89%</span>
+                                        </div>
+                                        <div class="flex justify-between items-center">
+                                            <span class="text-gray-700">المشاركة الصفية</span>
+                                            <span class="font-bold text-green-600">92%</span>
+                                        </div>
+                                        <div class="flex justify-between items-center">
+                                            <span class="text-gray-700">التقييمات</span>
+                                            <span class="font-bold text-green-600">87%</span>
+                                        </div>
+                                    </div>
+                                    <button class="btn-primary w-full mt-4">عرض التفاصيل</button>
+                                </div>
+                                
+                                <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-6">
+                                    <h3 class="text-xl font-bold text-blue-700 mb-4">📋 سجل المتابعة اليومية</h3>
+                                    <div class="space-y-3">
+                                        <div class="bg-white rounded-lg p-3">
+                                            <div class="flex justify-between items-center">
+                                                <span class="font-semibold text-gray-700">الأحد 15/11/2024</span>
+                                                <span class="bg-green-100 text-green-700 px-2 py-1 rounded text-sm">مكتمل</span>
+                                            </div>
+                                            <p class="text-sm text-gray-600 mt-1">درس الحروف الهجائية - حضر 27 من 28 طالب</p>
+                                        </div>
+                                        <div class="bg-white rounded-lg p-3">
+                                            <div class="flex justify-between items-center">
+                                                <span class="font-semibold text-gray-700">السبت 14/11/2024</span>
+                                                <span class="bg-green-100 text-green-700 px-2 py-1 rounded text-sm">مكتمل</span>
+                                            </div>
+                                            <p class="text-sm text-gray-600 mt-1">تقييم الأرقام - حضر 28 من 28 طالب</p>
+                                        </div>
+                                        <div class="bg-white rounded-lg p-3">
+                                            <div class="flex justify-between items-center">
+                                                <span class="font-semibold text-gray-700">الخميس 12/11/2024</span>
+                                                <span class="bg-yellow-100 text-yellow-700 px-2 py-1 rounded text-sm">جاري</span>
+                                            </div>
+                                            <p class="text-sm text-gray-600 mt-1">مراجعة الألوان - حضر 26 من 28 طالب</p>
+                                        </div>
+                                    </div>
+                                    <button class="btn-primary w-full mt-4">عرض السجل الكامل</button>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-8 bg-gray-50 rounded-xl p-6">
+                                <h3 class="text-xl font-bold text-gray-700 mb-4">📊 إحصائيات عامة</h3>
+                                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                                    <div class="text-center">
+                                        <div class="text-2xl font-bold text-green-600">156</div>
+                                        <p class="text-sm text-gray-600">حصة مكتملة</p>
+                                    </div>
+                                    <div class="text-center">
+                                        <div class="text-2xl font-bold text-blue-600">89%</div>
+                                        <p class="text-sm text-gray-600">معدل الحضور</p>
+                                    </div>
+                                    <div class="text-center">
+                                        <div class="text-2xl font-bold text-purple-600">234</div>
+                                        <p class="text-sm text-gray-600">واجب مُصحح</p>
+                                    </div>
+                                    <div class="text-center">
+                                        <div class="text-2xl font-bold text-orange-600">45</div>
+                                        <p class="text-sm text-gray-600">نشاط تفاعلي</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- تواصل معنا -->
+                    <div id="contact" class="section-content">
+                        <div class="bg-white rounded-2xl shadow-lg p-8 mb-8">
+                            <h2 class="text-3xl font-bold text-green-700 mb-6 flex items-center">
+                                <span class="text-4xl ml-4">📞</span>
+                                تواصل معنا
+                            </h2>
+                            
+                            <div class="grid md:grid-cols-2 gap-8">
+                                <div>
+                                    <h3 class="text-2xl font-semibold text-green-600 mb-4">معلومات التواصل</h3>
+                                    <div class="space-y-4">
+                                        <div class="flex items-center p-4 bg-green-50 rounded-lg">
+                                            <span class="text-2xl ml-4">📧</span>
+                                            <div>
+                                                <p class="font-semibold text-gray-700">البريد الإلكتروني</p>
+                                                <p class="text-green-600">a.alhujaily@edu.sa</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-center p-4 bg-green-50 rounded-lg">
+                                            <span class="text-2xl ml-4">📱</span>
+                                            <div>
+                                                <p class="font-semibold text-gray-700">رقم الجوال</p>
+                                                <p class="text-green-600">+966 50 123 4567</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-center p-4 bg-green-50 rounded-lg">
+                                            <span class="text-2xl ml-4">🏫</span>
+                                            <div>
+                                                <p class="font-semibold text-gray-700">مكتب المدرسة</p>
+                                                <p class="text-green-600">الدور الأول - مكتب رقم 15</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-center p-4 bg-green-50 rounded-lg">
+                                            <span class="text-2xl ml-4">⏰</span>
+                                            <div>
+                                                <p class="font-semibold text-gray-700">ساعات العمل</p>
+                                                <p class="text-green-600">الأحد - الخميس: 7:00 ص - 2:00 م</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="contact-form">
+                                    <h3 class="text-2xl font-semibold text-green-600 mb-4">أرسل رسالة</h3>
+                                    <form class="space-y-4">
+                                        <div>
+                                            <label class="block text-gray-700 font-semibold mb-2">الاسم الكامل</label>
+                                            <input type="text" class="input-field" placeholder="أدخل اسمك الكامل">
+                                        </div>
+                                        <div>
+                                            <label class="block text-gray-700 font-semibold mb-2">البريد الإلكتروني</label>
+                                            <input type="email" class="input-field" placeholder="أدخل بريدك الإلكتروني">
+                                        </div>
+                                        <div>
+                                            <label class="block text-gray-700 font-semibold mb-2">الموضوع</label>
+                                            <select class="input-field">
+                                                <option>اختر الموضوع</option>
+                                                <option>استفسار عن الطالب</option>
+                                                <option>طلب موعد</option>
+                                                <option>شكوى أو اقتراح</option>
+                                                <option>أخرى</option>
+                                            </select>
+                                        </div>
+                                        <div>
+                                            <label class="block text-gray-700 font-semibold mb-2">الرسالة</label>
+                                            <textarea class="input-field" rows="4" placeholder="اكتب رسالتك هنا..."></textarea>
+                                        </div>
+                                        <button type="submit" class="btn-primary w-full">
+                                            <span class="ml-2">📤</span>
+                                            إرسال الرسالة
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- نافذة تسجيل الدخول الإداري -->
+    <div id="loginModal" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+        <div class="bg-white rounded-2xl p-8 max-w-md w-full mx-4">
+            <h3 class="text-2xl font-bold text-green-700 mb-6 text-center">🔐 تسجيل الدخول الإداري</h3>
+            <form id="loginForm" class="space-y-4">
+                <div>
+                    <label class="block text-gray-700 font-semibold mb-2">اسم المستخدم</label>
+                    <input type="text" id="adminUsername" class="input-field" placeholder="أدخل اسم المستخدم" required>
+                </div>
+                <div>
+                    <label class="block text-gray-700 font-semibold mb-2">كلمة المرور</label>
+                    <input type="password" id="adminPassword" class="input-field" placeholder="أدخل كلمة المرور" required>
+                </div>
+                <div class="flex space-x-4 space-x-reverse">
+                    <button type="submit" class="btn-primary flex-1">تسجيل الدخول</button>
+                    <button type="button" onclick="closeModal('loginModal')" class="bg-gray-500 hover:bg-gray-600 text-white px-6 py-3 rounded-lg font-semibold">إلغاء</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- نافذة إضافة المحتوى -->
+    <div id="addContentModal" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+        <div class="bg-white rounded-2xl p-8 max-w-2xl w-full mx-4 max-h-[90vh] overflow-y-auto">
+            <h3 class="text-2xl font-bold text-green-700 mb-6 text-center">➕ إضافة محتوى جديد</h3>
+            
+            <div class="mb-6">
+                <label class="block text-gray-700 font-semibold mb-2">نوع المحتوى</label>
+                <select id="contentType" class="input-field" onchange="showContentForm()">
+                    <option value="">اختر نوع المحتوى</option>
+                    <option value="worksheet">ورقة عمل</option>
+                    <option value="student">طالب جديد</option>
+                    <option value="achievement">إنجاز جديد</option>
+                    <option value="goal">هدف جديد</option>
+                </select>
+            </div>
+
+            <!-- نموذج ورقة العمل -->
+            <div id="worksheetForm" class="hidden space-y-4">
+                <h4 class="text-lg font-semibold text-green-600">إضافة ورقة عمل جديدة</h4>
+                <input type="text" id="worksheetTitle" class="input-field" placeholder="عنوان ورقة العمل">
+                <textarea id="worksheetDescription" class="input-field" rows="3" placeholder="وصف ورقة العمل"></textarea>
+                <select id="worksheetCategory" class="input-field">
+                    <option value="جديد">جديد</option>
+                    <option value="محدث">محدث</option>
+                    <option value="شائع">شائع</option>
+                    <option value="متقدم">متقدم</option>
+                </select>
+            </div>
+
+            <!-- نموذج الطالب -->
+            <div id="studentForm" class="hidden space-y-4">
+                <h4 class="text-lg font-semibold text-green-600">إضافة طالب جديد</h4>
+                <input type="text" id="studentName" class="input-field" placeholder="اسم الطالب">
+                <input type="text" id="studentClass" class="input-field" placeholder="الصف">
+                <input type="number" id="readingProgress" class="input-field" placeholder="تقدم القراءة %" min="0" max="100">
+                <input type="number" id="writingProgress" class="input-field" placeholder="تقدم الكتابة %" min="0" max="100">
+                <select id="studentStatus" class="input-field">
+                    <option value="متفوق">متفوق</option>
+                    <option value="جيد جداً">جيد جداً</option>
+                    <option value="جيد">جيد</option>
+                    <option value="يحتاج دعم">يحتاج دعم</option>
+                </select>
+            </div>
+
+            <!-- نموذج الإنجاز -->
+            <div id="achievementForm" class="hidden space-y-4">
+                <h4 class="text-lg font-semibold text-green-600">إضافة إنجاز جديد</h4>
+                <input type="text" id="achievementTitle" class="input-field" placeholder="عنوان الإنجاز">
+                <input type="text" id="achievementIcon" class="input-field" placeholder="رمز الإنجاز (emoji)">
+            </div>
+
+            <!-- نموذج الهدف -->
+            <div id="goalForm" class="hidden space-y-4">
+                <h4 class="text-lg font-semibold text-green-600">إضافة هدف جديد</h4>
+                <input type="text" id="goalTitle" class="input-field" placeholder="عنوان الهدف">
+                <select id="goalType" class="input-field">
+                    <option value="short">قصير المدى</option>
+                    <option value="long">طويل المدى</option>
+                </select>
+            </div>
+
+            <div class="flex space-x-4 space-x-reverse mt-6">
+                <button onclick="addContent()" class="btn-primary flex-1">إضافة المحتوى</button>
+                <button onclick="closeModal('addContentModal')" class="bg-gray-500 hover:bg-gray-600 text-white px-6 py-3 rounded-lg font-semibold">إلغاء</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- نافذة تأكيد الحذف -->
+    <div id="deleteModal" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+        <div class="bg-white rounded-2xl p-8 max-w-md w-full mx-4">
+            <h3 class="text-2xl font-bold text-red-700 mb-4 text-center">⚠️ تأكيد الحذف</h3>
+            <p class="text-gray-700 text-center mb-6">هل أنت متأكد من حذف هذا العنصر؟ لا يمكن التراجع عن هذا الإجراء.</p>
+            <div class="flex space-x-4 space-x-reverse">
+                <button onclick="confirmDelete()" class="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg font-semibold flex-1">حذف</button>
+                <button onclick="closeModal('deleteModal')" class="bg-gray-500 hover:bg-gray-600 text-white px-6 py-3 rounded-lg font-semibold flex-1">إلغاء</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- إشعار النجاح -->
+    <div id="successNotification" class="fixed top-4 right-4 bg-green-600 text-white px-6 py-4 rounded-lg shadow-lg hidden z-50">
+        <div class="flex items-center">
+            <span class="text-xl ml-3">✅</span>
+            <span id="successMessage">تم بنجاح!</span>
+        </div>
+    </div>
+
+    <script>
+        // متغيرات النظام الإداري
+        let isAdminMode = false;
+        let itemToDelete = null;
+        
+        // بيانات تسجيل الدخول (في التطبيق الحقيقي، يجب أن تكون مشفرة ومحفوظة بشكل آمن)
+        const adminCredentials = {
+            username: 'admin',
+            password: 'teacher123'
+        };
+
+        // تحديث التاريخ والوقت
+        function updateDateTime() {
+            const now = new Date();
+            const options = { 
+                weekday: 'long', 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric',
+                calendar: 'islamic-umalqura'
+            };
+            
+            const dateString = now.toLocaleDateString('ar-SA', options);
+            const timeString = now.toLocaleTimeString('ar-SA', {
+                hour: '2-digit',
+                minute: '2-digit'
+            });
+            
+            document.getElementById('currentDate').textContent = dateString;
+            document.getElementById('currentTime').textContent = timeString;
+        }
+
+        // عرض القسم المحدد
+        function showSection(sectionId) {
+            // إخفاء جميع الأقسام
+            const sections = document.querySelectorAll('.section-content');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // إزالة الفئة النشطة من جميع عناصر التنقل
+            const navItems = document.querySelectorAll('.nav-item');
+            navItems.forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // عرض القسم المحدد
+            document.getElementById(sectionId).classList.add('active');
+            
+            // إضافة الفئة النشطة لعنصر التنقل المحدد
+            event.target.closest('.nav-item').classList.add('active');
+        }
+
+        // تبديل الوضع الإداري
+        function toggleAdminMode() {
+            if (!isAdminMode) {
+                document.getElementById('loginModal').classList.remove('hidden');
+            } else {
+                // تسجيل الخروج
+                isAdminMode = false;
+                document.getElementById('adminToggle').innerHTML = '🔐 تسجيل دخول إداري';
+                document.getElementById('adminControls').classList.add('hidden');
+                hideAdminControls();
+                showNotification('تم تسجيل الخروج بنجاح');
+            }
+        }
+
+        // إظهار/إخفاء أدوات التحكم الإدارية
+        function showAdminControls() {
+            const controls = document.querySelectorAll('.admin-controls');
+            controls.forEach(control => control.classList.remove('hidden'));
+        }
+
+        function hideAdminControls() {
+            const controls = document.querySelectorAll('.admin-controls');
+            controls.forEach(control => control.classList.add('hidden'));
+        }
+
+        // إظهار نافذة إضافة المحتوى
+        function showAddContentModal() {
+            document.getElementById('addContentModal').classList.remove('hidden');
+        }
+
+        // إظهار نموذج المحتوى المحدد
+        function showContentForm() {
+            const contentType = document.getElementById('contentType').value;
+            const forms = ['worksheetForm', 'studentForm', 'achievementForm', 'goalForm'];
+            
+            forms.forEach(form => {
+                document.getElementById(form).classList.add('hidden');
+            });
+            
+            if (contentType) {
+                document.getElementById(contentType + 'Form').classList.remove('hidden');
+            }
+        }
+
+        // إضافة محتوى جديد
+        function addContent() {
+            const contentType = document.getElementById('contentType').value;
+            
+            if (!contentType) {
+                alert('يرجى اختيار نوع المحتوى');
+                return;
+            }
+
+            switch (contentType) {
+                case 'worksheet':
+                    addWorksheet();
+                    break;
+                case 'student':
+                    addStudent();
+                    break;
+                case 'achievement':
+                    addAchievement();
+                    break;
+                case 'goal':
+                    addGoal();
+                    break;
+            }
+        }
+
+        // إضافة ورقة عمل جديدة
+        function addWorksheet() {
+            const title = document.getElementById('worksheetTitle').value;
+            const description = document.getElementById('worksheetDescription').value;
+            const category = document.getElementById('worksheetCategory').value;
+            
+            if (!title || !description) {
+                alert('يرجى ملء جميع الحقول المطلوبة');
+                return;
+            }
+
+            const worksheetId = 'worksheet-' + Date.now();
+            const categoryColors = {
+                'جديد': 'bg-green-100 text-green-700',
+                'محدث': 'bg-blue-100 text-blue-700',
+                'شائع': 'bg-yellow-100 text-yellow-700',
+                'متقدم': 'bg-purple-100 text-purple-700'
+            };
+
+            const worksheetHTML = `
+                <div class="worksheet-item" data-id="${worksheetId}">
+                    <div class="flex items-center justify-between mb-3">
+                        <h3 class="text-xl font-bold text-green-700">${title}</h3>
+                        <div class="flex items-center space-x-2 space-x-reverse">
+                            <span class="${categoryColors[category]} px-3 py-1 rounded-full text-sm font-semibold">${category}</span>
+                            <div class="admin-controls ${isAdminMode ? '' : 'hidden'}">
+                                <button onclick="editItem('worksheet', '${worksheetId}')" class="text-blue-600 hover:text-blue-800 p-1">✏️</button>
+                                <button onclick="deleteItem('${worksheetId}')" class="text-red-600 hover:text-red-800 p-1">🗑️</button>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">${description}</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-gray-500">📅 ${new Date().toLocaleDateString('ar-SA')}</span>
+                        <button class="btn-primary text-sm px-4 py-2">تحميل</button>
+                    </div>
+                </div>
+            `;
+
+            const worksheetsContainer = document.querySelector('#worksheets .grid');
+            worksheetsContainer.insertAdjacentHTML('beforeend', worksheetHTML);
+            
+            closeModal('addContentModal');
+            showNotification('تم إضافة ورقة العمل بنجاح');
+            clearForm('worksheet');
+        }
+
+        // إضافة طالب جديد
+        function addStudent() {
+            const name = document.getElementById('studentName').value;
+            const studentClass = document.getElementById('studentClass').value;
+            const readingProgress = document.getElementById('readingProgress').value;
+            const writingProgress = document.getElementById('writingProgress').value;
+            const status = document.getElementById('studentStatus').value;
+            
+            if (!name || !studentClass || !readingProgress || !writingProgress) {
+                alert('يرجى ملء جميع الحقول المطلوبة');
+                return;
+            }
+
+            const studentId = 'student-' + Date.now();
+            const statusColors = {
+                'متفوق': 'bg-green-100 text-green-700',
+                'جيد جداً': 'bg-blue-100 text-blue-700',
+                'جيد': 'bg-yellow-100 text-yellow-700',
+                'يحتاج دعم': 'bg-red-100 text-red-700'
+            };
+
+            const studentHTML = `
+                <div class="student-card" data-id="${studentId}">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center ml-4">
+                                <span class="text-green-600 font-bold text-lg">${name.charAt(0)}</span>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-gray-800">${name}</h3>
+                                <p class="text-gray-600 text-sm">${studentClass}</p>
+                            </div>
+                        </div>
+                        <div class="text-left flex items-center space-x-2 space-x-reverse">
+                            <span class="${statusColors[status]} px-3 py-1 rounded-full text-sm font-semibold">${status}</span>
+                            <div class="admin-controls ${isAdminMode ? '' : 'hidden'}">
+                                <button onclick="editItem('student', '${studentId}')" class="text-blue-600 hover:text-blue-800 p-1">✏️</button>
+                                <button onclick="deleteItem('${studentId}')" class="text-red-600 hover:text-red-800 p-1">🗑️</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <p class="text-sm text-gray-600 mb-1">تقدم القراءة</p>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: ${readingProgress}%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-600 mb-1">تقدم الكتابة</p>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: ${writingProgress}%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            const studentsContainer = document.querySelector('#students .space-y-4');
+            studentsContainer.insertAdjacentHTML('beforeend', studentHTML);
+            
+            closeModal('addContentModal');
+            showNotification('تم إضافة الطالب بنجاح');
+            clearForm('student');
+        }
+
+        // إضافة إنجاز جديد
+        function addAchievement() {
+            const title = document.getElementById('achievementTitle').value;
+            const icon = document.getElementById('achievementIcon').value;
+            
+            if (!title || !icon) {
+                alert('يرجى ملء جميع الحقول المطلوبة');
+                return;
+            }
+
+            const achievementHTML = `<div class="achievement-badge">${icon} ${title}</div>`;
+            const achievementsContainer = document.querySelector('#profile .space-y-3');
+            achievementsContainer.insertAdjacentHTML('beforeend', achievementHTML);
+            
+            closeModal('addContentModal');
+            showNotification('تم إضافة الإنجاز بنجاح');
+            clearForm('achievement');
+        }
+
+        // إضافة هدف جديد
+        function addGoal() {
+            const title = document.getElementById('goalTitle').value;
+            const type = document.getElementById('goalType').value;
+            
+            if (!title) {
+                alert('يرجى ملء جميع الحقول المطلوبة');
+                return;
+            }
+
+            const goalHTML = `
+                <div class="flex items-start p-3 ${type === 'short' ? 'bg-green-50' : 'bg-blue-50'} rounded-lg">
+                    <span class="${type === 'short' ? 'text-green-600' : 'text-blue-600'} ml-3 mt-1">${type === 'short' ? '✓' : '🎯'}</span>
+                    <p class="text-gray-700">${title}</p>
+                </div>
+            `;
+
+            const goalsContainer = document.querySelector(`#vision .space-y-3:${type === 'short' ? 'first-of-type' : 'last-of-type'}`);
+            goalsContainer.insertAdjacentHTML('beforeend', goalHTML);
+            
+            closeModal('addContentModal');
+            showNotification('تم إضافة الهدف بنجاح');
+            clearForm('goal');
+        }
+
+        // حذف عنصر
+        function deleteItem(itemId) {
+            itemToDelete = itemId;
+            document.getElementById('deleteModal').classList.remove('hidden');
+        }
+
+        // تأكيد الحذف
+        function confirmDelete() {
+            if (itemToDelete) {
+                const element = document.querySelector(`[data-id="${itemToDelete}"]`);
+                if (element) {
+                    element.remove();
+                    showNotification('تم حذف العنصر بنجاح');
+                }
+                itemToDelete = null;
+            }
+            closeModal('deleteModal');
+        }
+
+        // تعديل عنصر
+        function editItem(type, itemId) {
+            alert('ميزة التعديل ستكون متاحة قريباً');
+        }
+
+        // تصدير البيانات
+        function exportData() {
+            const data = {
+                worksheets: [],
+                students: [],
+                achievements: [],
+                goals: []
+            };
+            
+            // جمع البيانات من الصفحة
+            document.querySelectorAll('.worksheet-item').forEach(item => {
+                const title = item.querySelector('h3').textContent;
+                const description = item.querySelector('p').textContent;
+                data.worksheets.push({ title, description });
+            });
+            
+            document.querySelectorAll('.student-card').forEach(item => {
+                const name = item.querySelector('h3').textContent;
+                const studentClass = item.querySelector('.text-gray-600').textContent;
+                data.students.push({ name, class: studentClass });
+            });
+
+            // تحويل البيانات إلى JSON وتحميلها
+            const dataStr = JSON.stringify(data, null, 2);
+            const dataBlob = new Blob([dataStr], {type: 'application/json'});
+            const url = URL.createObjectURL(dataBlob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = 'teacher-portfolio-data.json';
+            link.click();
+            
+            showNotification('تم تصدير البيانات بنجاح');
+        }
+
+        // إظهار وضع التعديل
+        function showEditMode() {
+            if (isAdminMode) {
+                showAdminControls();
+                showNotification('وضع التعديل مفعل - يمكنك الآن تعديل أو حذف العناصر');
+            }
+        }
+
+        // إغلاق النوافذ المنبثقة
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.add('hidden');
+            if (modalId === 'addContentModal') {
+                document.getElementById('contentType').value = '';
+                showContentForm();
+            }
+        }
+
+        // مسح النماذج
+        function clearForm(formType) {
+            const forms = {
+                worksheet: ['worksheetTitle', 'worksheetDescription', 'worksheetCategory'],
+                student: ['studentName', 'studentClass', 'readingProgress', 'writingProgress', 'studentStatus'],
+                achievement: ['achievementTitle', 'achievementIcon'],
+                goal: ['goalTitle', 'goalType']
+            };
+            
+            if (forms[formType]) {
+                forms[formType].forEach(fieldId => {
+                    const field = document.getElementById(fieldId);
+                    if (field) field.value = '';
+                });
+            }
+        }
+
+        // إظهار الإشعارات
+        function showNotification(message) {
+            const notification = document.getElementById('successNotification');
+            const messageElement = document.getElementById('successMessage');
+            messageElement.textContent = message;
+            notification.classList.remove('hidden');
+            
+            setTimeout(() => {
+                notification.classList.add('hidden');
+            }, 3000);
+        }
+
+        // معالج تسجيل الدخول
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const username = document.getElementById('adminUsername').value;
+            const password = document.getElementById('adminPassword').value;
+            
+            if (username === adminCredentials.username && password === adminCredentials.password) {
+                isAdminMode = true;
+                document.getElementById('adminToggle').innerHTML = '🔓 تسجيل خروج';
+                document.getElementById('adminControls').classList.remove('hidden');
+                closeModal('loginModal');
+                showNotification('تم تسجيل الدخول بنجاح');
+                
+                // مسح الحقول
+                document.getElementById('adminUsername').value = '';
+                document.getElementById('adminPassword').value = '';
+            } else {
+                alert('اسم المستخدم أو كلمة المرور غير صحيحة');
+            }
+        });
+
+        // تهيئة الصفحة
+        document.addEventListener('DOMContentLoaded', function() {
+            updateDateTime();
+            setInterval(updateDateTime, 60000); // تحديث كل دقيقة
+            
+            // إضافة تأثيرات الظهور التدريجي
+            const elements = document.querySelectorAll('.slide-in, .fade-in');
+            elements.forEach((element, index) => {
+                element.style.animationDelay = `${index * 0.1}s`;
+            });
+        });
+
+        // معالج إرسال النموذج
+        document.querySelector('#contact form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('تم إرسال رسالتك بنجاح! سنتواصل معك قريباً.');
+            this.reset();
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'96a4087641fff9a3',t:'MTc1NDM3MzE5NS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
